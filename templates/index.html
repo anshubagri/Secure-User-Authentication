@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Login & Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="flip-card" id="flip-card">
+            <!-- Login Form -->
+            <div class="form-box" id="login-form">
+                <h2 class="login">Login</h2>
+                <form id="loginForm">
+                    <div class="input-box">
+                        <input type="email" id="login-email" placeholder="Email" required>
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" id="login-password" placeholder="Password" required>
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
+                    <button class="btn" type="submit">Login</button>
+                </form>
+                <p class="para"><b>Or login with</b></p>
+                <div class="social-btns">
+                    <button><i class='bx bxl-google'></i></button>
+                    <button><i class='bx bxl-facebook'></i></button>
+                    <button><i class='bx bxl-github'></i></button>
+                    <button><i class='bx bxl-linkedin'></i></button>
+                </div>
+                <button class="toggle-btn">Don't have an account? <span>Register</span></button>
+            </div>
+
+            <!-- Register Form -->
+            <div class="form-box" id="register-form">
+                <h2>Register</h2>
+                <form id="registerForm">
+                    <div class="input-box">
+                        <input type="text" id="reg-name" placeholder="Full Name" required>
+                        <i class='bx bxs-user'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="date" id="reg-dob" required>
+                        <i class='bx bxs-calendar'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" id="reg-email" placeholder="Email" required>
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" id="reg-password" placeholder="Password" required>
+                        <i class='bx bxs-lock-alt'></i>
+                    </div>
+
+                    <!-- Password Strength Meter -->
+                    <div id="password-strength"></div>
+
+                    <button class="btn" type="submit">Register</button>
+                </form>
+                <p class="para"><b>Or register with</b></p>
+                <div class="social-btns">
+                    <button><i class='bx bxl-google'></i></button>
+                    <button><i class='bx bxl-facebook'></i></button>
+                    <button><i class='bx bxl-github'></i></button>
+                    <button><i class='bx bxl-linkedin'></i></button>
+                </div>
+                <button class="toggle-btn">Already have an account? <span>Login</span></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(./background.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  perspective: 1000px;
+  width: 380px;
+  position: relative;
+}
+
+.flip-card {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.form-box {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  text-align: center;
+  padding: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.login {
+  font-size: 45px;
+}
+
+#register-form {
+  transform: rotateY(180deg);
+  height: 100%;
+}
+
+.input-box {
+  position: relative;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.input-box input {
+  width: 90%;
+  padding: 10px 40px 10px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-box i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 14px;
+  transition: color 0.3s ease-in-out;
+}
+
+.toggle-btn:hover {
+  color: #FFD700;
+}
+
+.social-btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-btns button {
+  border-radius: 25%;
+  background: none;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 22px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Password Strength Meter */
+#password-strength {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 420px;
+  }
+}
