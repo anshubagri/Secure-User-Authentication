@@ -23,6 +23,11 @@ def init_db():
         ''')
         conn.commit()
 
+# Ensure DB is initialized before first request
+@app.before_first_request
+def initialize():
+    init_db()
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -81,5 +86,4 @@ def logout():
     return redirect(url_for('home'))
 
 if __name__ == '__main__':
-    init_db()
     app.run(debug=True)
