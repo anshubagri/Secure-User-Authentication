@@ -8,7 +8,7 @@ app.secret_key = os.urandom(24)
 
 DB_PATH = 'database.db'
 
-# Initialize DB
+# Initialize DB once at startup
 def init_db():
     with sqlite3.connect(DB_PATH) as conn:
         cursor = conn.cursor()
@@ -23,10 +23,8 @@ def init_db():
         ''')
         conn.commit()
 
-# Ensure DB is initialized before first request
-@app.before_first_request
-def initialize():
-    init_db()
+# Explicitly call DB initialization when app starts
+init_db()
 
 @app.route('/')
 def home():
